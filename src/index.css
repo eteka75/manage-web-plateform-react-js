@@ -9,9 +9,56 @@ body{
     background-position: 90% -25%;
 }
 @layer base{
-
+    body{
+        background-position: 50px -50px;
+        background-size: 500px;
+    }
     #cta{
         background-image: url('./assets/bg-simplify-section-mobile.svg');
 
     }
+}
+/**/
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all .25s;
+    position: relative;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+    position: absolute;
+    top:0;
+    left:0;
+    width:24px;
+    padding: 1px;
+    background-color: #010911;
+    transform: rotate(0);
+    transition: all .5s;
+}
+.hamburger-top{
+    transform: translateY(7px);
+}
+.hamburger-middle{
+    transform: translateY(14px);
+}
+
+.hamburger-bottom{
+    transform: rotateY(21px);
+}
+/*****/
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0);
+}
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .hamburger-middle{
+    display: none;
+}
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
